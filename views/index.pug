@@ -1,0 +1,12 @@
+html
+  head
+    style
+      include style/style.css
+    title='QR Generator'
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    header
+      div(class="header-container")
+        img(src=`${uri}/assets/icon.svg`)
+    div(class="container")
+      img(src=generateqr)

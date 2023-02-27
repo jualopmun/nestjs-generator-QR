@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #FFA500;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+}
+
+header img {
+  height: 50px;
+  margin-right: 1rem;
+}
