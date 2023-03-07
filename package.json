@@ -35,6 +35,7 @@
     "helmet": "6.0.1",
     "moment": "2.29.4",
     "pug": "3.0.2",
+    "qrcode": "1.5.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "7.2.0"
@@ -63,28 +64,34 @@
     "tsconfig-paths": "4.0.0",
     "typescript": "4.3.5"
   },
-  "jest":     {
-    "moduleNameMapper": {"^@/(.*)$": "<rootDir>/$1"},
-    "coveragePathIgnorePatterns":         [
-        "node_modules",
-        "config",
-        "exception",
-        "schemas",
-        ".module.ts",
-        ".index.ts",
-        ".main.ts",
-        "common",
-        ".mock.ts"
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1"
+    },
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "config",
+      "exception",
+      "schemas",
+      ".module.ts",
+      ".index.ts",
+      ".main.ts",
+      "common",
+      ".mock.ts"
     ],
-    "moduleFileExtensions":         [
-        "js",
-        "json",
-        "ts"
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
     ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
-    "transform": {"^.+\\.(t|j)s$": "ts-jest"},
-    "collectCoverageFrom": ["**/*.(t|j)s"],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "verbose": false

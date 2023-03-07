@@ -1,8 +1,6 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as cookieParser from 'cookie-parser';
-import * as compression from 'compression';
 import helmet from 'helmet';
 
 import { join } from 'path';
@@ -18,6 +16,7 @@ async function bootstrap() {
     logger: new CustomLogger(),
     bodyParser: true,
   });
+
   const config: ConfigService = app.get(ConfigService);
   const port: number = config.get<number>('PORT');
   const { httpAdapter } = app.get(HttpAdapterHost);
