@@ -10,8 +10,8 @@ import { GenerateQRInterface } from './interfaces/index.interface';
 import { Response } from 'express';
 
 const TYPEOPERATIONCREATE = {
-  [TypeEnum.HTML]: (res: Response, getQR: GenerateQRInterface) =>
-    res.status(200).render('index', { uri: environment.URI, ...getQR }),
+  [TypeEnum.HTML]: (res: Response, getQR: GenerateQRInterface, size: number) =>
+    res.status(200).render('index', { uri: environment.URI, ...getQR, size }),
   [TypeEnum.JSON]: (res: Response, getQR: GenerateQRInterface) =>
     res.status(200).send(getQR),
   [TypeEnum.IMAGE]: (res: Response, getQR: GenerateQRInterface) => {
@@ -33,9 +33,9 @@ export class GeneratorQrController {
     @Body() createGeneratorQrDto: CreateGeneratorQrDto,
     @Res() res: Response,
   ) {
-    const { type } = createGeneratorQrDto;
+    const { type, size } = createGeneratorQrDto;
     const getQR = await this.generatorQrService.create(createGeneratorQrDto);
 
-    return TYPEOPERATIONCREATE[type](res, getQR);
+    return TYPEOPERATIONCREATE[type](res, getQR, size);
   }
 }
